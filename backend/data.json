@@ -1,0 +1,37 @@
+{
+  "crowd_density": {
+    "Gate A": 30,
+    "Gate B": 85,
+    "Gate C": 40,
+    "Food Court North": 60,
+    "Food Court South": 90,
+    "Washroom 1": 20,
+    "Washroom 2": 45
+  },
+  "wait_times": {
+    "Gate A": 5,
+    "Gate B": 25,
+    "Gate C": 10,
+    "Food Court North": 15,
+    "Food Court South": 35,
+    "Washroom 1": 2,
+    "Washroom 2": 12
+  },
+  "alerts": [
+    {
+      "id": 1,
+      "message": "Gate B is officially overcrowded. Please use Gate A or C.",
+      "severity": "high"
+    },
+    {
+      "id": 2,
+      "message": "Food Court South is experiencing delays. Head to Food Court North.",
+      "severity": "medium"
+    },
+    {
+      "id": 3,
+      "message": "All other zones are operating normally.",
+      "severity": "low"
+    }
+  ]
+}

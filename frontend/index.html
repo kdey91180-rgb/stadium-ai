@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Stadium Assistant</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Smart Stadium Assistant</h1>
+        <p>Optimize your physical event experience</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Alerts -->
+        <section id="alerts-section" class="card alerts-container hidden">
+            <h2>🚨 Live Alerts</h2>
+            <ul id="alerts-list"></ul>
+        </section>
+
+        <div class="grid-2">
+
+            <!-- Crowd -->
+            <section class="card">
+                <h2>📊 Crowd Density</h2>
+                <div id="crowd-data" class="data-grid"></div>
+            </section>
+
+            <!-- Wait -->
+            <section class="card">
+                <h2>⏱️ Waiting Times</h2>
+                <div id="wait-data" class="data-grid"></div>
+            </section>
+
+        </div>
+
+        <div class="grid-2">
+
+            <!-- Chatbot -->
+            <section class="card chatbot">
+                <h2>🤖 Stadium AI Assistant</h2>
+
+                <div id="chat-window" class="chat-window">
+                    <div class="message bot">
+                        Hello! Ask me about gates, food, or washrooms.
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input"
+                        placeholder="Ask: fastest food, least crowded gate, nearest washroom...">
+                    <button id="send-btn">Send</button>
+                </div>
+            </section>
+
+            <!-- Admin -->
+            <section class="card admin">
+                <h2>⚙️ Admin Controls (Simulation)</h2>
+                <p>Refresh data to simulate a live environment.</p>
+                <button id="refresh-btn" class="admin-btn">↻ Refresh Live Data</button>
+                <p class="small-text">Note: Triggering updates pulls latest crowd logic.</p>
+            </section>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align:center; margin-top:20px; font-size:12px; color:gray;">
+        Smart Stadium Assistant © 2026 | Built for Smart Venue Experience
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
