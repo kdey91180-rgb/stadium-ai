@@ -1,4 +1,4 @@
-const API_BASE = '/api';
+const API_BASE = window.location.origin + '/api';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();
