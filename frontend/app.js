@@ -1,4 +1,5 @@
-const API_BASE = 'http://127.0.0.1:5000';
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_BASE = isLocal ? 'http://127.0.0.1:5000' : '';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();

@@ -1,0 +1,42 @@
+{
+  "builds": [
+    {
+      "src": "backend/app.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "frontend/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/crowd",
+      "destination": "/backend/app.py"
+    },
+    {
+      "source": "/wait-times",
+      "destination": "/backend/app.py"
+    },
+    {
+      "source": "/alerts",
+      "destination": "/backend/app.py"
+    },
+    {
+      "source": "/chat",
+      "destination": "/backend/app.py"
+    },
+    {
+      "source": "/",
+      "destination": "/frontend/index.html"
+    },
+    {
+      "source": "/style.css",
+      "destination": "/frontend/style.css"
+    },
+    {
+      "source": "/app.js",
+      "destination": "/frontend/app.js"
+    }
+  ]
+}
