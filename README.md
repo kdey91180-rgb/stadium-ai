@@ -39,9 +39,12 @@ Smart Sporting Venue Experience
 - **Backend**: Python (Flask, Flask-CORS)
 - **Data storage**: Local JSON mimicking NoSQL database behaviors
 
-## 8. Google Services Used (Simulated)
-- API architecture is designed to map to **Firebase Realtime Database**.
-- Spatial logic within chatbot implies hooks for **Google Maps API** (Indoor maps).
+## 8. Google Services Used
+
+- Firebase Realtime Database (Architecture-ready integration)
+- Google Maps API (Planned for indoor navigation extension)
+
+Note: Due to lightweight prototype constraints, APIs are simulated using JSON data, but system is designed for direct integration.
 
 ## 9. Assumptions
 - Real-world indoor navigation APIs will supply exact metric distances (simulated here by lowest absolute Wait Time or Crown Density).
