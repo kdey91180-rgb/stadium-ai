@@ -40,22 +40,38 @@ def chat():
     wait_times = data.get("wait_times", {})
     crowd = data.get("crowd_density", {})
 
+    # 🔹 FASTEST FOOD
     if "fastest" in query or "food" in query or "eat" in query:
         food_stalls = {k: v for k, v in wait_times.items() if "Food" in k}
         if food_stalls:
             fastest = min(food_stalls, key=food_stalls.get)
-            return jsonify({"response": f"The fastest food stall is {fastest} with a {food_stalls[fastest]} min wait."})
+            return jsonify({
+                "response": f"The fastest food stall is {fastest} with a {food_stalls[fastest]} min wait."
+            })
 
+    # 🔹 LEAST CROWDED GATE
     elif "gate" in query:
         gates = {k: v for k, v in crowd.items() if "Gate" in k}
         if gates:
             least_crowded = min(gates, key=gates.get)
-            return jsonify({"response": f"The least crowded gate is {least_crowded} at {gates[least_crowded]}% capacity."})
+            return jsonify({
+                "response": f"The least crowded gate is {least_crowded} at {gates[least_crowded]}% capacity."
+            })
 
+    # 🔹 WASHROOM
     elif "washroom" in query or "toilet" in query:
         washrooms = {k: v for k, v in wait_times.items() if "Washroom" in k}
         if washrooms:
             best = min(washrooms, key=washrooms.get)
-            return jsonify({"response": f"The nearest available washroom is {best} with a {washrooms[best]} min wait."})
+            return jsonify({
+                "response": f"The nearest available washroom is {best} with a {washrooms[best]} min wait."
+            })
 
-    return jsonify({"response": "I can help with fastest food, least crowded gate, or nearest washroom."})
+    return jsonify({
+        "response": "I can help with fastest food, least crowded gate, or nearest washroom."
+    })
+
+
+# 🔥 VERY IMPORTANT FOR VERCEL
+def handler(request, response):
+    return app(request.environ, response.start_response)
